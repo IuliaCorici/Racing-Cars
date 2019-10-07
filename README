@@ -1,0 +1,61 @@
+Last name, first name: CORICI, IULIA-STEFANIA
+Group, series: 314CA
+
+Date at which I started doing homework : March 31st, 2019
+( It's been 84 years ...)
+Date at which I finished doing homework : April 6th, 2019
+
+~Problems I had to deal with:
+  **not understanding properly how Skip Lists work in the beginning
+   ---> got it eventually, and luckily, on time
+  **being underpressure and short of time (my fault) made me work a little bit
+   inefficient so the use of Skip List isn't the best
+   ---> but at least I've managed to make use of it at some point
+  **at first, I've implemented  a generic Skip List for better understanding it.
+   Then I've solved the problem without Skip List and finally merged the 2 pieces
+   of code. I must admit it was pretty difficult because of several syntax errors,
+   segmentation faults, memory leaks and so on, but in the end, after a lot of 
+   hours I succeeded in making it work.
+  **also at this moment I haven't managed to upload the files on vmchecker so I 
+   don't know if the coding style is properly done
+
+~Algorithm used:
+       			 ------FOR SKIP LIST----
+   +-->insert function
+       *start from highest level of skip list, move the 'aux' pointer forward
+        while data is greater than data of the node next to aux 
+        Otherwise inserted 'aux' in 'prev' and move one level down and continue 
+        search
+       *reached level 0 and move pointer to right, which is the desired position 
+        to insert the given data
+       *if random level is greater than list's current level, initialize 'prev' to
+        'head' pointer, and continue performing tthe insert
+   +-->remove function
+       *the search for the given data is being done the same as in insert function
+       *reached level 0 and move pointer to right, which is the desired position 
+        to delete the given data
+       *if the data is equal to the one in aux pointer the node is deleted and 
+        current level of the skiplist lowers
+   +-->get_value function
+       *this gets the k-th node in the skiplist just by walking on level 0, and
+        moving forward till the k-th node is found
+
+                  	------FOR THE RACERS PROBLEM----
+
+   +-->first of all, I'm sorting the pilots on how fast they are
+   +-->now I can get the numbers of pilots that get skipped when calculating
+       the scores
+   +-->next I sort the pilots again but on their score so I can get the positions
+       in the scoreboard
+   +-->last, but no least I insert the pilots in the skiplist by taking into
+       consideration only their index, get them from the list sorted, then empty 
+       the list => overloading the operators in this way
+      *instead of using another sort on index, I thought the skiplist would
+       do just fine in this respect*
+   +-->when it comes to 'print' command I resort the pilots on score, print what
+       is needed and then again use skiplist
+
+~Complexity of the problem:
+   +-->not very difficult in point of knowledge but surely a lot to work on
+       and of course demanding a good understanding of the concepts taught so 
+       far in the course 
